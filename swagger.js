@@ -5,7 +5,7 @@ const doc = {
         title: 'My API',
         description: 'Equestrian API'
     },
-    host: 'cse341-instructor.herokuapp.com',
+    host: 'localhost:3000',
     schemes: ['https']
 };
 
