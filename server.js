@@ -22,6 +22,7 @@ app
     })
     .use('/', require('./routes'));
 
+//how to handle errors
 process.on('uncaughtException', (err, origin) => {
     console.log(process.stderr.fd, `Caught exception ${err}\n` * `Exception origin: ${origin}`);
 });
