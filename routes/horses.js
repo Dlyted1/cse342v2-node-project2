@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const contactsController = require('../controllers/horses');
+const horsesController = require('../controllers/horses');
 const validation = require('../middleware/validate');
 
-router.get('/', horsessController.getAll);
+router.get('/', horsesController.getAll);
 
 router.get('/:id', horsesController.getSingle);
 
