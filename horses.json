@@ -1,0 +1,12 @@
+{
+    "_id": {
+        "$oid": "65f3d1ffc05198f3f370c0fe"
+    },
+    "name": "Tonka Eyanosa",
+    "breed": "Mustang",
+    "coloring": "Chestnut",
+    "gender": "gelding",
+    "birthday": "01/01/1997",
+    "discipline": "English/Western/Trail",
+    "vet": "Dr. Hennesy"
+}
