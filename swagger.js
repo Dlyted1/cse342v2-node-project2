@@ -6,7 +6,7 @@ const doc = {
         description: 'Equestrian API'
     },
     host: 'localhost:3000',
-    schemes: ['https', 'http']
+    schemes: ['http']
 };
 
 const outputFile = './swagger.json';
