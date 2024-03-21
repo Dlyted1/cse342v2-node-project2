@@ -12,11 +12,11 @@ POST http://localhost:3000/horses HTTP/1.1
 content-type: application/json
 
 {
-    "name":"Ash",
-    "breed":"OTTB",
-    "coloring":"Grey",
-    "gender":"Mare",
-    "birthday":"06/19/2000",
+    "name":"Checkers",
+    "breed":"Quarter",
+    "coloring":"Paint",
+    "gender":"Gelding",
+    "birthday":"07/18/2015",
     "discipline":"Western",
     "vet": "Loren McClain"
    
@@ -37,5 +37,5 @@ content-type: application/json
     "vet": "Dr. Hennesy"
 }
 ### DELETE contact
-DELETE http://localhost:3000/horses/65f3d620c05198f3f370c105 HTTP/1.1
+DELETE http://localhost:3000/horses/65fc6f286fb1186422e12827 HTTP/1.1
 
