@@ -13,17 +13,17 @@
   "paths": {
     "/api-docs": {
       "get": {
-        "description": "Get Swagger Documentation",
+        "description": "",
         "responses": {
           "default": {
-            "description": "OK"
+            "description": ""
           }
         }
       }
     },
     "/horses/": {
       "get": {
-        "description": "Get all horses",
+        "description": "",
         "produces": [
           "application/json"
         ],
@@ -34,7 +34,7 @@
         }
       },
       "post": {
-        "description": "Create a new horse",
+        "description": "",
         "parameters": [
           {
             "name": "body",
@@ -43,7 +43,6 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "type": "string",
                   "example": "any"
                 },
                 "breed": {
@@ -83,7 +82,7 @@
     },
     "/horses/{id}": {
       "get": {
-        "description": "Get a specific horse",
+        "description": "",
         "produces": [
           "application/json"
         ],
@@ -105,7 +104,7 @@
         }
       },
       "put": {
-        "description": "Update a specific horse",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -160,7 +159,7 @@
         }
       },
       "delete": {
-        "description": "Delete a specific horse",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -184,7 +183,7 @@
     },
     "/owners/": {
       "get": {
-        "description": "Get all owners",
+        "description": "",
         "produces": [
           "application/json"
         ],
@@ -195,7 +194,7 @@
         }
       },
       "post": {
-        "description": "Create a new owner",
+        "description": "",
         "parameters": [
           {
             "name": "body",
@@ -256,7 +255,7 @@
         }
       },
       "put": {
-        "description": "Update owner",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -274,9 +273,6 @@
                   "example": "any"
                 },
                 "lastName": {
-                  "example": "any"
-                },
-                "email": {
                   "example": "any"
                 },
                 "phone": {
@@ -302,7 +298,7 @@
         }
       },
       "delete": {
-        "description": "Delete owner",
+        "description": "",
         "parameters": [
           {
             "name": "id",
