@@ -8,6 +8,6 @@ const router = express.Router();
 
 router.use('/', require('./swagger'));
 router.use('/horses', require('./horses'));
-// router.use('/owners', require('./owners'));
+router.use('/owners', require('./owners'));
 
 module.exports = router;

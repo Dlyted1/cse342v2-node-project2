@@ -13,31 +13,28 @@
   "paths": {
     "/api-docs": {
       "get": {
-        "description": "",
+        "description": "Get Swagger Documentation",
         "responses": {
           "default": {
-            "description": ""
+            "description": "OK"
           }
         }
       }
     },
     "/horses/": {
       "get": {
-        "description": "",
+        "description": "Get all horses",
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
           }
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a new horse",
         "parameters": [
           {
             "name": "body",
@@ -46,6 +43,7 @@
               "type": "object",
               "properties": {
                 "name": {
+                  "type": "string",
                   "example": "any"
                 },
                 "breed": {
@@ -85,7 +83,7 @@
     },
     "/horses/{id}": {
       "get": {
-        "description": "",
+        "description": "Get a specific horse",
         "produces": [
           "application/json"
         ],
@@ -107,7 +105,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update a specific horse",
         "parameters": [
           {
             "name": "id",
@@ -162,7 +160,149 @@
         }
       },
       "delete": {
+        "description": "Delete a specific horse",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/owners/": {
+      "get": {
+        "description": "Get all owners",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new owner",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/owners/{id}": {
+      "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "Update owner",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete owner",
         "parameters": [
           {
             "name": "id",
