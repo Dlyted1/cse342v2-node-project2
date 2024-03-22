@@ -56,14 +56,14 @@ const createHorse = async (req, res) => {
             .collection('horses')
             .insertOne(horse);
 
-        // if (response.acknowledged && response.ops && response.ops.length > 0) {
-        // Check if response.ops exists and has at least one element
+        if (response.acknowledged && response.ops && response.ops.length > 0) {
+            // Check if response.ops exists and has at least one element
 
-        // Respond with the created horse data
-        res.status(201).json(response.ops[0]); // ops contains the inserted document(s)
-        // } else {
-        //    res.status(500).json('Some error occurred while creating the horse profile.');
-        // }
+            // Respond with the created horse data
+            res.status(201).json(response.ops[0]); // ops contains the inserted document(s)
+        } else {
+            //    res.status(500).json('Some error occurred while creating the horse profile.');
+        }
     } catch (error) {
         console.error("Error creating horse:", error); // Log the error to console
         res.status(500).json('Some error occurred while creating the horse profile.');

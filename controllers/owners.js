@@ -54,13 +54,13 @@ const createOwner = async (req, res) => {
             .collection('owners')
             .insertOne(owner);
 
-        // if (response.acknowledged && response.ops && response.ops.length > 0) {
-        // Check if response.ops exists and has at least one element
-        // Respond with the created horse data
-        res.status(201).json(response.ops[0]); // ops contains the inserted document(s)
-        // } else {
-        // res.status(500).json('Some error occurred while creating the owner profile.');
-
+        if (response.acknowledged && response.ops && response.ops.length > 0) {
+            // Check if response.ops exists and has at least one element
+            // Respond with the created horse data
+            res.status(201).json(response.ops[0]); // ops contains the inserted document(s)
+        } else {
+            // res.status(500).json('Some error occurred while creating the owner profile.');
+        }
     } catch (error) {
         console.error("Error creating owner:", error); // Log the error to console
         res.status(500).json('Some error occurred while creating the owner profile.');
