@@ -7,6 +7,7 @@
 
 // app.listen(port, () => { console.log(`running on port ${port}`) });
 
+const cookieSession = require('cookie-session')
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
@@ -21,8 +22,9 @@ const app = express();
 app
     .use(bodyParser.json())
 
-    .use(session({
-        secret: "secret",
+    .use(cookieSession({
+        name: 'session',
+        secret: 'secret',
         resave: false,
         saveUninitialized: true,
     }))
