@@ -7,12 +7,13 @@
 
 // app.listen(port, () => { console.log(`running on port ${port}`) });
 
-const cookieSession = require('cookie-session')
+// const cookieSession = require('cookie-session')
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const passport = require('passport');
 const session = require('express-session');
+const MemoryStore = require('memorystore')(session)
 const GitHubStrategy = require('passport-github2').Strategy;
 
 
@@ -22,7 +23,11 @@ const app = express();
 app
     .use(bodyParser.json())
 
-    .use(cookieSession({
+    .use(session({
+        cookie: { maxAge: 86400000 },
+        store: new MemoryStore({
+            checkPeriod: 86400000 // prune expired entries every 24h
+        }),
         name: 'session',
         secret: 'secret',
         resave: false,
