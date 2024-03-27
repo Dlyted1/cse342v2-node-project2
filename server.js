@@ -12,9 +12,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const passport = require('passport');
-// const session = require('express-session');
+const session = require('express-session');
 // const MemoryStore = require('memorystore')(session)
 const GitHubStrategy = require('passport-github2').Strategy;
+const cors = require('cors');
 
 
 const port = process.env.PORT || 3000;
@@ -31,8 +32,8 @@ app
         // name: 'session',
         secret: 'secret',
         resave: false,
-        // saveUninitialized: true,
-        saveUninitialized: false,
+        saveUninitialized: true,
+        // saveUninitialized: false,
     }))
     // This is the basic express session ({..}) initialization.
     .use(passport.initialize())
@@ -42,8 +43,18 @@ app
 
     .use((req, res, next) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader(
+            'Access-Control-Allow-Headers',
+            'Origin, X-Requested-With, Content-Type, Accept, Z-Key, Authorization'
+        );
+        res - setHeader(
+            'Access-Control-Allow-Methods', PATCH, OPTIONS, DELETE,
+            'POST, GET, PUT, PATCH, OPTIONS, DELETE'
+        );
         next();
     })
+    .use(cors({ methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'] }))
+    .use(cors({ origin: '*' }))
     // .use('/', require('./routes'));
     .use('/', require('./routes/index.js'));
 
