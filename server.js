@@ -23,7 +23,7 @@ const app = express();
 
 app
     .use(bodyParser.json())
-
+    .use(cors())
     .use(session({
         // cookie: { maxAge: 86400000 },
         // store: new MemoryStore({
@@ -47,8 +47,8 @@ app
             'Access-Control-Allow-Headers',
             'Origin, X-Requested-With, Content-Type, Accept, Z-Key, Authorization'
         );
-        res - setHeader(
-            'Access-Control-Allow-Methods', PATCH, OPTIONS, DELETE,
+        res.setHeader(
+            'Access-Control-Allow-Methods',
             'POST, GET, PUT, PATCH, OPTIONS, DELETE'
         );
         next();
