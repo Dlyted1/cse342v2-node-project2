@@ -7,7 +7,7 @@
 
 // app.listen(port, () => { console.log(`running on port ${port}`) });
 
-const session = require('cookie-session')
+// const cookieSession = require('cookie-session')
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
@@ -31,7 +31,8 @@ app
         // name: 'session',
         secret: 'secret',
         resave: false,
-        saveUninitialized: true,
+        // saveUninitialized: true,
+        saveUninitialized: false,
     }))
     // This is the basic express session ({..}) initialization.
     .use(passport.initialize())
@@ -56,7 +57,7 @@ passport.use(new GitHubStrategy({
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
     callbackURL: process.env.CALLBACK_URL
 },
-    function (accessToken, refreshToken, profile, done) {
+    function (_accessToken, _refreshToken, profile, done) {
         // User.findCreate({ githubID: profile.id }, function (err, user) {
         return done(null, profile);
         // });
