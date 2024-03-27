@@ -7,12 +7,12 @@
 
 // app.listen(port, () => { console.log(`running on port ${port}`) });
 
-// const cookieSession = require('cookie-session')
+const session = require('cookie-session')
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const passport = require('passport');
-const session = require('express-session');
+// const session = require('express-session');
 // const MemoryStore = require('memorystore')(session)
 const GitHubStrategy = require('passport-github2').Strategy;
 
