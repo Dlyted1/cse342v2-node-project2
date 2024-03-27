@@ -5,8 +5,8 @@ const doc = {
         title: 'My API',
         description: 'Equestrian API'
     },
-    host: 'localhost:3000',
-    schemes: ['http']
+    host: 'https://cse342v2-node-project2.onrender.com',
+    schemes: ['http', 'https']
 };
 
 const outputFile = './swagger.json';
